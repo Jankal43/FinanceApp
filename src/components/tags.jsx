@@ -2,52 +2,52 @@ const tags = [
     {
         id: 1,
         emoji: "🍔",
-        description: "food",
+        description: "Food",
     },
     {
         id: 2,
         emoji: "🚗",
-        description: "transportation",
+        description: "Transportation",
     },
     {
         id: 3,
         emoji: "📚",
-        description: "education",
+        description: "Education",
     },
     {
         id: 4,
         emoji: "💰",
-        description: "savings",
+        description: "Savings",
     },
     {
         id: 5,
         emoji: "✈️",
-        description: "travel",
+        description: "Travel",
     },
     {
         id: 6,
         emoji: "🎁",
-        description: "gifts",
+        description: "Gifts",
     },
     {
         id: 7,
         emoji: "🛒",
-        description: "shopping",
+        description: "Shopping",
     },
     {
         id: 8,
         emoji: "🎉",
-        description: "entertainment",
+        description: "Entertainment",
     },
     {
         id: 9,
         emoji: "💡",
-        description: "utilities",
+        description: "Utilities",
     },
     {
         id: 10,
         emoji: "🛠️",
-        description: "home improvement",
+        description: "Home improvement",
     },
 ];
 

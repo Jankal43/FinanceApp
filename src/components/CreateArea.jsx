@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SelectTag from "./SelectTag";
 
 function CreateArea(props) {
@@ -13,17 +13,14 @@ function CreateArea(props) {
   const formattedDate = `${day}-${month}-${year}`;
 
 
+  // const [tagSelected, setTagSelected] = useState("Select a tag");
+  const [showSelectTag, setShowSelectTag] = useState(false);
 
-  
   const [spends, setSpends] = useState({
     moneySpend: "",
     todaysDate: formattedDate,
-  });
-
-  const [showSelectTag, setShowSelectTag] = useState(false);
-
-  const [tagSelected, setTagSelected] = useState({
-    tagSelected: ""
+    emoji: "Select a tag",
+    description: ""
   });
 
 
@@ -49,10 +46,9 @@ function CreateArea(props) {
       event.preventDefault();
     }
   }
-  // {while(1){
-  //   console.log(tagSelected)
-  // }}
-
+// useEffect(()=>{
+//   // console.log(tagSelected)
+// })
   
 
   return (
@@ -69,11 +65,12 @@ function CreateArea(props) {
         />
         
         <button onClick={()=>{setShowSelectTag(true)}}> 
-          {tagSelected==="" ? tagSelected : "SelectTag"}
+          {spends.emoji}
         </button>
         
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+        <button className="bg-blsue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             onClick={()=>{
+              console.log(spends)
               props.addSpend(spends);
               props.setShowCreateArea(false);
               handleSubmit();
@@ -89,7 +86,8 @@ function CreateArea(props) {
           Cancel
         </button>
 
-        {showSelectTag && <SelectTag setShowSelectTag={setShowSelectTag} setTagSelected={setTagSelected}/>}
+        {/* {showSelectTag && <SelectTag setShowSelectTag={setShowSelectTag} setTagSelected={setTagSelected}/>} */}
+        {showSelectTag && <SelectTag setShowSelectTag={setShowSelectTag} setSpends={setSpends}/>}
 
       </div>
     </div>
