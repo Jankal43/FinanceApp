@@ -2,5 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+body {
+    background-color: black;
+}
+
+
+/* @media (min-width: 600px) {
+    .App{
+        width: 700px;
+    }
+    Footer{
+        width: 700px;
+    }
+} */
     
   

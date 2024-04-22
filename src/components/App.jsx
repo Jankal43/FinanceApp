@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Spend from "./Spend";
 import CreateArea from "./CreateArea";
+// import { useMediaQuery } from 'react-responsive';
 
 function App() {
 
@@ -37,23 +38,19 @@ function App() {
   }
 
   return (
-    <div className="App text-white">
+    // <div className="bg-black min-h-screen">
+      <div className="App text-white min-h-screen relative flex flex-col">
       <Header />
-      <div className="flex flex-col min-h-screen text-white">
-        <div className="flex-grow bg-gray-800">  
-          <h1>Spent This Month:</h1>
-          {spendsList.map((spend, index) => (
-            <Spend id={index} key={index} price={spend.inputPrice} date={spend.inputDate} deleteSpend={deleteSpend} emoji={spend.emoji} description={spend.description}/>
-          ))}
-        
-        </div>
+      <div className="flex-grow bg-gray-800">  
+        <h1>Spent This Month:</h1>
+        {spendsList.map((spend, index) => (
+          <Spend id={index} key={index} price={spend.inputPrice} date={spend.inputDate} deleteSpend={deleteSpend} emoji={spend.emoji} description={spend.description}/>
+        ))}
       </div>
-
-      {showCreateArea && <CreateArea  setShowCreateArea={setShowCreateArea} addSpend={addSpend}/>}
-      <Footer setShowCreateArea={setShowCreateArea} />
-
-      
+      {showCreateArea && <CreateArea setShowCreateArea={setShowCreateArea} addSpend={addSpend}/>}
+      <Footer className="fixed bottom-0 left-0 right-0" setShowCreateArea={setShowCreateArea} />
     </div>
+  // </div>
   );
 }
 
