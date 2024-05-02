@@ -9,7 +9,7 @@ function SelectTag(props) {
     return (
     <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-end">
       <div>
-        <div className="border-4 p-32 rounded-lg shadow-md">
+        <div className="border-4 p-32 rounded-lg shadow-md bg-black">
           {tags.map((tag, index) => (
             <Tag key={index} id={index} emoji={tag.emoji} description={tag.description} setSpends={props.setSpends} setShowSelectTag={props.setShowSelectTag} />
           ))}

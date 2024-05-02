@@ -14,6 +14,7 @@ function App() {
   }]);
 
   const [showCreateArea, setShowCreateArea] = useState(false);
+  const [totalSpend, setTotalSpend] = useState(0);
 
   function addSpend(newSpend) {
     setSpendsList((prevSpends) => [
@@ -36,13 +37,12 @@ function App() {
       });
     });
   }
-
   return (
-    // <div className="bg-black min-h-screen">
-      <div className="App text-white min-h-screen relative flex flex-col">
+    <div className="App text-white min-h-screen relative flex flex-col items-center">
       <Header />
-      <div className="flex-grow bg-gray-800">  
-        <h1>Spent This Month:</h1>
+      <div className="flex-grow bg-gray-800 text-center ">  
+        <h1 className="text-1xl mt-10 ">Spent This Month</h1>
+        <div className="text-7xl mt-2 text-red-500">-{totalSpend}$</div>
         {spendsList.map((spend, index) => (
           <Spend id={index} key={index} price={spend.inputPrice} date={spend.inputDate} deleteSpend={deleteSpend} emoji={spend.emoji} description={spend.description}/>
         ))}
@@ -50,8 +50,8 @@ function App() {
       {showCreateArea && <CreateArea setShowCreateArea={setShowCreateArea} addSpend={addSpend}/>}
       <Footer className="fixed bottom-0 left-0 right-0" setShowCreateArea={setShowCreateArea} />
     </div>
-  // </div>
   );
+  
 }
 
 export default App;

@@ -9,20 +9,36 @@ function Spend(props) {
   }
 
   return (
-    <div className="border rounded p-4 m-10">
-      {props.emoji && <div className="Emoji">{props.emoji}</div>}
-      {props.description && <div className="Description">{props.description}</div>}
-      {props.date && <div className="Date">{props.date}</div>}
-      {props.price && <div className="Price">{props.price} pln</div>}
-    
-        <button
-          onClick={() => {
-            props.deleteSpend(props.id);
-          }}
-        >
-          DELETE
-        </button>
-    
+    <div className="mr-5 ml-5">
+        <div className="DateAndPrice text-stone-400">
+          {props.date && <div className="Date">{props.date}</div>}
+          {props.price && <div className="Price">{props.price}.00 $</div>}
+        </div>
+
+       <div className="SpendContainer">
+          <div className="Content">
+            <div className="EmojiAndDescription">
+              {props.emoji && <div className="Emoji">{props.emoji}</div>}
+                <div className="DescriptionAndDate">
+                  {props.description && <div className="Description font-bold">{props.description}</div>}
+                  {props.date && <div className="Date2 text-stone-400">{props.date}</div>}
+                </div>
+            </div>
+            
+          <div className="PriceDelete items-end">  
+            {props.price && <div className="Price2 text-red-500">-$ {props.price}.00</div>}
+          <div className="w-100">  
+            <button
+            onClick={() => {props.deleteSpend(props.id);}} 
+            className="bg-red-500 hover:bg-red-700 text-white rounded text-xs p-1 mt-1 "
+          >
+            DELETE
+          </button>
+        </div>
+        </div>
+          </div>
+      
+      </div>    
     </div>
   );
 }

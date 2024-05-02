@@ -1,12 +1,34 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .div1 { grid-area: 1 / 1 / 3 / 2; }
-    .div2 { grid-area: 1 / 2 / 2 / 3; }
-    .div3 { grid-area: 2 / 2 / 3 / 3; }
-    .div4 { grid-area: 1 / 3 / 3 / 4; }
+.DateAndPrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Content{
+    display: flex;
+    justify-content: space-between;
+}
+.Emoji{
+    font-size: 2.5em;
+}
+.EmojiAndDescription{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+.DescriptionAndDate{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+}
+.PriceDelete{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+}
+
+
+
+
+
+
+

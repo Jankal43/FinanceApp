@@ -5,17 +5,61 @@
 
 
 body {
-    background-color: black;
+    background-color: #31363F;
 }
 
-
-/* @media (min-width: 600px) {
-    .App{
-        width: 700px;
+@media (max-width: 768px) {
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    Footer{
-        width: 700px;
+  
+    .App .flex-grow,
+    .App header,
+    .App footer {
+      width: 100%;
+      max-width: none; 
     }
-} */
-    
+  
+    .App header,
+    .App footer {
+      margin-left: auto; 
+      margin-right: auto; 
+    }
+  
+    .App footer {
+      margin-top: 20px; 
+    }
+  }
+ 
+  @media (min-width: 769px) {
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+  
+    .App .flex-grow {
+      max-width: 600px; 
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .App header,
+    .App footer {
+      max-width: 600px; 
+      width: 100%;
+      margin-left: auto; 
+      margin-right: auto; 
+    }
+  
+    .App footer {
+      margin-top: 20px;
+    }
+  }
   
