@@ -4,16 +4,14 @@ import './spend.css';
 
 
 function Spend(props) {
+  console.log("Props: ", props)
+
   if (!props.emoji && !props.description && !props.date && !props.price) {
     return null;
   }
 
   return (
-    <div className="mr-5 ml-5">
-        <div className="DateAndPrice text-stone-400">
-          {props.date && <div className="Date">{props.date}</div>}
-          {props.price && <div className="Price">{props.price}.00 $</div>}
-        </div>
+   
 
        <div className="SpendContainer">
           <div className="Content">
@@ -24,7 +22,6 @@ function Spend(props) {
                   {props.date && <div className="Date2 text-stone-400">{props.date}</div>}
                 </div>
             </div>
-            
           <div className="PriceDelete items-end">  
             {props.price && <div className="Price2 text-red-500">-$ {props.price}.00</div>}
           <div className="w-100">  
@@ -39,7 +36,7 @@ function Spend(props) {
           </div>
       
       </div>    
-    </div>
+  
   );
 }
 
