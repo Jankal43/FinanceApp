@@ -14,8 +14,8 @@ function Spend(props) {
         <div className="EmojiAndDescription">
           {props.emoji && <div className="Emoji">{props.emoji}</div>}
           <div className="DescriptionAndDate">
-            {props.description && <div className="Description font-bold">{props.description}</div>}
-            {props.date && <div className="Date2 text-stone-400">{props.date}</div>}
+            {props.description && <div className="Description font-bold text-left">{props.description}</div>}
+            {props.date && <div className="Date2 text-stone-400 text-left">{props.date}</div>}
           </div>
         </div>
         <div className="PriceDelete items-end">

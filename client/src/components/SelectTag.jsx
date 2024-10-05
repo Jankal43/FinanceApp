@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tag from './Tag';
 import axios from 'axios';
+import PlusButton from "./PlusButton";
 
 function SelectTag(props) {
   const [tags, setTags] = useState([]);
@@ -33,43 +34,52 @@ function SelectTag(props) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-end">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="border-4 p-32 rounded-lg shadow-md bg-black">
-          {tags.map((tag, index) => (
-            <div key={index} className="mb-4">
-              <Tag emoji={tag.emoji} description={tag.description} setSpends={props.setSpends} setShowSelectTag={props.setShowSelectTag} />
-            </div>
-          ))}
 
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Emoji"
-              value={newTag.emoji}
-              onChange={(e) => setNewTag({ ...newTag, emoji: e.target.value })}
-              className="mb-2 p-2 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Description"
-              value={newTag.description}
-              onChange={(e) => setNewTag({ ...newTag, description: e.target.value })}
-              className="mb-2 p-2 rounded"
-            />
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleAddTag}>
-              Add
-            </button>
+      //fixed bottom-0 h-1/2 max-w-lg sm:w-lg w-full bg-white dark:bg-black p-5 border-t rounded-t-3xl dark:border-zinc-600
+      <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-end z-[9999]">
+        <div className="w-rem38 h-2/3 bg-gray-900 border-t p-16 rounded-t-3xl border-gray-600 shadow-md">
+          <div className="flex justify-center gap-10">
+            {/*<div*/}
+            {/*    className="h-12 w-12 bg-gray-600 hover:bg-gray-500 text-5xl hover:text-6xl rounded-full flex items-center justify-center">*/}
+            {/*  +*/}
+            {/*</div>*/}
+            <PlusButton />
+            {tags.map((tag, index) => (
+                <div key={index} className="mb-4 hover:text-xl ">
+                  <Tag emoji={tag.emoji} description={tag.description} setSpends={props.setSpends}
+                       setShowSelectTag={props.setShowSelectTag}/>
+                </div>
+            ))}
           </div>
+          {/*<div className="Inputs flex flex-col mb-4">*/}
 
-          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() => props.setShowSelectTag(false)}
-          >
-            Cancel
-          </button>
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      placeholder="Emoji"*/}
+          {/*      value={newTag.emoji}*/}
+          {/*      onChange={(e) => setNewTag({ ...newTag, emoji: e.target.value })}*/}
+          {/*      className="mb-2 p-2 rounded"*/}
+          {/*    />*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      placeholder="Description"*/}
+          {/*      value={newTag.description}*/}
+          {/*      onChange={(e) => setNewTag({ ...newTag, description: e.target.value })}*/}
+          {/*      className="mb-2 p-2 rounded"*/}
+          {/*    />*/}
+          {/*    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleAddTag}>*/}
+          {/*      Add*/}
+          {/*    </button>*/}
+
+
+          {/*  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"*/}
+          {/*    onClick={() => props.setShowSelectTag(false)}*/}
+          {/*  >*/}
+          {/*    Cancel*/}
+          {/*  </button>*/}
+          {/*</div>*/}
         </div>
       </div>
-    </div>
   );
 }
 

@@ -10,7 +10,8 @@ function Tag(props) {
       }));; 
         props.setShowSelectTag(false);
     }}>
-        <div>{props.emoji} {props.description}</div>
+        <div>{props.emoji} </div>
+        <div>{props.description}</div>
     </button>
   )
 }

@@ -87,7 +87,7 @@ function App() {
 )}
       </div>
       {showCreateArea && <CreateArea setShowCreateArea={setShowCreateArea} addSpend={addSpend} />}
-      <Footer className="fixed bottom-0 left-0 right-0" setShowCreateArea={setShowCreateArea} />
+      <Footer className="fixed bottom-0 left-0 right-0 z-10" setShowCreateArea={setShowCreateArea} />
     </div>
   );
 }
