@@ -1,0 +1,14 @@
+.animated {
+    position: fixed;
+
+    bottom: 0;
+    transform: translateY(100%);
+    animation: smooth-appear 0.5s ease forwards;
+}
+
+
+@keyframes smooth-appear {
+    to {
+        transform: translateY(0);
+    }
+}

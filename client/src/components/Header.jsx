@@ -6,10 +6,10 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 function Header() {
   return (
-    <header className="flex justify-around bg-gray-900 h-10 items-center">
+    <header className="flex justify-around bg-gray-900 pt-3 pb-3 items-center border-b border-gray-600">
       <MdDarkMode />
       {/* <MdOutlineDarkMode /> */}
-      <p>Expenses</p>
+      <p className="text-xl">Expenses</p>
       <AiOutlineMenu />
     </header>
   );

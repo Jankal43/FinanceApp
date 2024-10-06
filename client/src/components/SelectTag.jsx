@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import Tag from './Tag';
 import axios from 'axios';
 import PlusButton from "./PlusButton";
+import "./animations.css"
 
 function SelectTag(props) {
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState({ emoji: '', description: '' });
-
+  const containerRef = useRef(null);
   useEffect(() => {
     const fetchTags = async () => {
       try {
@@ -33,11 +34,20 @@ function SelectTag(props) {
     }
   };
 
+  const handleClickOutside = (event)=>{
+    if ((event.target.className.includes('SelectTag'))){
+      props.setShowSelectTag(false)
+    };
+  }
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
 
       //fixed bottom-0 h-1/2 max-w-lg sm:w-lg w-full bg-white dark:bg-black p-5 border-t rounded-t-3xl dark:border-zinc-600
-      <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-end z-[9999]">
-        <div className="w-rem38 h-2/3 bg-gray-900 border-t p-16 rounded-t-3xl border-gray-600 shadow-md">
+      <div className="SelectTag backdrop-blur-sm fixed inset-0 bg-black bg-opacity-0 flex justify-center items-end z-[9999]">
+        <div className="w-rem38 h-1/2 bg-gray-900 border-t p-16 rounded-t-3xl border-gray-600 shadow-md animated">
           <div className="flex justify-center gap-10">
             {/*<div*/}
             {/*    className="h-12 w-12 bg-gray-600 hover:bg-gray-500 text-5xl hover:text-6xl rounded-full flex items-center justify-center">*/}
@@ -45,7 +55,7 @@ function SelectTag(props) {
             {/*</div>*/}
             <PlusButton />
             {tags.map((tag, index) => (
-                <div key={index} className="mb-4 hover:text-xl ">
+                <div key={index} className="mb-4">
                   <Tag emoji={tag.emoji} description={tag.description} setSpends={props.setSpends}
                        setShowSelectTag={props.setShowSelectTag}/>
                 </div>

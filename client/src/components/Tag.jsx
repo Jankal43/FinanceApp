@@ -10,8 +10,8 @@ function Tag(props) {
       }));; 
         props.setShowSelectTag(false);
     }}>
-        <div>{props.emoji} </div>
-        <div>{props.description}</div>
+        <div className="text-2xl">{props.emoji} </div>
+        <div className="hover:text-lg hover:font-semibold">{props.description}</div>
     </button>
   )
 }

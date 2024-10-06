@@ -65,13 +65,16 @@ function App() {
     <div className="App text-white min-h-screen relative flex flex-col items-center">
       <Header />
       <div className="flex-grow bg-gray-800 text-center ">
+        <div className="pb-10 mb-14">
         <h1 className="text-1xl mt-10 ">Spent This Month</h1>
-        <div className="text-7xl mt-2 text-red-500">-{totalSpend.toFixed(2)}$</div>
+        <div className="text-7xl mt-2 text-red-500 font-semibold">-{totalSpend.toFixed(2)}$</div>
+        </div>
+        <hr  className="border-gray-500"/>
         {spendsList.length > 0 ? (
   spendsList.map((spend, index) => {
     console.log('Rendering spend with _id:', spend._id);
     return (
-      <Spend
+        <Spend
         id={spend._id} // Use spend._id as the key
         key={spend._id}
         price={spend.price}

@@ -68,7 +68,7 @@ function CreateArea(props) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-      <div className="CreateAreaContainer">
+      <div className="CreateAreaContainer animated">
         <div className="Header text-stone-400 text-sm m-5">
           <p>Todays at: {formattedDate}</p>
         </div>

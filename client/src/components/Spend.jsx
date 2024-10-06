@@ -19,13 +19,13 @@ function Spend(props) {
           </div>
         </div>
         <div className="PriceDelete items-end">
-          {props.price && <div className="Price2 text-red-500">-$ {parseFloat(props.price).toFixed(2)}</div>}
+          {props.price && <div className="Price2 text-red-500 font-semibold">-$ {parseFloat(props.price).toFixed(2)}</div>}
           <div className="w-100">
             <button
               onClick={() => { props.deleteSpend(props.id); }}
-              className="bg-red-500 hover:bg-red-700 text-white rounded text-xs p-1 mt-1"
+              className="border border-gray-500 hover:bg-red-700 text-gray-300 hover:text-white hover:border-white rounded text-xs p-1 mt-1"
             >
-              DELETE
+              Remove
             </button>
           </div>
         </div>
