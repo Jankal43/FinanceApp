@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       width: {
         'rem38': '38rem', // Dodaj niestandardową szerokość
+      },
+      height: {
+        '125': '125%',
       }
     },
   },

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Tag(props) {
   return (
-    <button onClick={()=> {
+    <button className="hover:text-lg hover:font-semibold" onClick={()=> {
         props.setSpends(prevState => ({
         ...prevState,
         emoji: props.emoji,
@@ -11,7 +11,7 @@ function Tag(props) {
         props.setShowSelectTag(false);
     }}>
         <div className="text-2xl">{props.emoji} </div>
-        <div className="hover:text-lg hover:font-semibold">{props.description}</div>
+        <div>{props.description}</div>
     </button>
   )
 }

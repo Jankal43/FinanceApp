@@ -30,15 +30,12 @@ function CreateArea(props) {
 
   const handleSubmit = async () => {
     try {
-
-
       const response = await axios.post('http://localhost:8080/expenses', {
         emoji: spends.emoji,
         description: spends.description,
         price: spends.moneySpend,
         date: spends.todaysDate
       });
-
 
       if (response.status === 200) {
         console.log('Expanse added:', response.data);
