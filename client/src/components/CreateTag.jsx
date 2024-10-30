@@ -47,35 +47,35 @@ function CreateTag(props) {
     };
 
     return (
-        <div className="CreateTagContainer backdrop-blur-sm fixed inset-0 bg-black bg-opacity-0 flex justify-center items-end">
+        <div className="CreateTagContainer backdrop-blur-sm fixed inset-0 bg-slate-100 dark:bg-black bg-opacity-0 flex justify-center items-end">
             <div
-                className="w-rem38 h-125 bg-gray-900 border-t p-16 rounded-t-3xl border-gray-600 shadow-md animated pt-3">
+                className="dark:text-white text-black w-rem38 h-125 bg-slate-100 dark:bg-gray-900 border-t  p-16 rounded-t-3xl border-gray-600 shadow-md animated pt-3">
 
-                <button onClick={() => props.setShowCreateTag(false)} className="text-white text-3xl pt-0 mt-0">
+                <button onClick={() => props.setShowCreateTag(false)} className=" text-3xl pt-0 mt-0">
                     ←
                 </button>
 
                 <hr className="my-4"/>
 
                 <div className="flex flex-col items-center justify-center gap-6">
-                    <div className="text-white text-xl font-semibold">NEW TAG</div>
+                    <div className=" text-xl font-semibold">NEW TAG</div>
 
                     <input
-                        className="text-white text-center w-1/2 bg-transparent text-lg border-b border-gray-600 outline-none"
+                        className=" text-center w-1/2 bg-transparent text-lg border-b border-gray-600 outline-none"
                         name="emoji"
                         placeholder="🏠 (sticker)"
                         onChange={handleChange}
                     />
 
                     <input
-                        className="text-white text-center w-1/2 bg-transparent text-lg border-b border-gray-600 outline-none"
+                        className=" text-center w-1/2 bg-transparent text-lg border-b border-gray-600 outline-none"
                         name="description"
                         placeholder="house (name)"
                         onChange={handleChange}
                     />
 
                     <button
-                        className="bg-white hover:bg-gray-100 w-1/5 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 w-1/5 dark:text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
                         onClick={handleSubmit}
                     >
                         Confirm

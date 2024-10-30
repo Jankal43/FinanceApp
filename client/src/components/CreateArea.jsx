@@ -64,14 +64,14 @@ function CreateArea(props) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+    <div className="fixed inset-0 bg-white bg-opacity-30 dark:bg-black dark:bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="CreateAreaContainer animated">
-        <div className="Header text-stone-400 text-sm m-5">
+        <div className="Header text-black dark:text-stone-400 text-sm m-5">
           <p>Todays at: {formattedDate}</p>
         </div>
         <div className="InputField pb-1">
           <input
-            className="text-white text-center bg-transparent text-2xl border-b border-gray-300 outline-none"
+            className="dark:text-white text-black text-center bg-transparent text-2xl border-b border-gray-300 outline-none"
             name="moneySpend"
             onChange={handleChange}
             onKeyPress={handleKeyPress}

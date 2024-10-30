@@ -23,7 +23,7 @@ function Spend(props) {
           <div className="w-100">
             <button
               onClick={() => { props.deleteSpend(props.id); }}
-              className="border border-gray-500 hover:bg-red-700 text-gray-300 hover:text-white hover:border-white rounded text-xs p-1 mt-1"
+              className="border border-gray-500 hover:bg-red-700 text-black dark:text-gray-300 hover:text-white hover:border-white rounded text-xs p-1 mt-1"
             >
               Remove
             </button>

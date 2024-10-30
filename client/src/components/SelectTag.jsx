@@ -69,7 +69,7 @@ function SelectTag(props) {
 
       //fixed bottom-0 h-1/2 max-w-lg sm:w-lg w-full bg-white dark:bg-black p-5 border-t rounded-t-3xl dark:border-zinc-600
       <div className="SelectTag backdrop-blur-sm fixed inset-0 bg-black bg-opacity-0 flex justify-center items-end">
-        <div className="w-rem38 h-1/2 bg-gray-900 border-t p-16 rounded-t-3xl border-gray-600 shadow-md animated">
+        <div className="w-rem38 h-1/2 bg-slate-100 dark:bg-gray-900 text-black dark:text-white border-t p-16 rounded-t-3xl border-gray-600 shadow-md animated">
           <div className="flex flex-wrap justify-center gap-10">
             <button onClick={() => setShowCreateTag(true)}>
               <PlusButton/>

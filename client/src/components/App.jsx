@@ -62,14 +62,14 @@ function App() {
 };
 
   return (
-    <div className="App text-white min-h-screen relative flex flex-col items-center">
+    <div className="App text-black dark:text-white min-h-screen relative flex flex-col items-center">
       <Header />
-      <div className="flex-grow bg-gray-800 text-center ">
+      <div className="flex-grow bg-white dark:bg-gray-800 text-center ">
         <div className="pb-10 mb-14">
         <h1 className="text-1xl mt-10 ">Spent This Month</h1>
         <div className="text-7xl mt-2 text-red-500 font-semibold">-{totalSpend.toFixed(2)}$</div>
         </div>
-        <hr  className="border-gray-500"/>
+        <hr  className="border-black dark:border-gray-500"/>
         {spendsList.length > 0 ? (
   spendsList.map((spend, index) => {
     console.log('Rendering spend with _id:', spend._id);

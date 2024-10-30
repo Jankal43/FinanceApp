@@ -5,8 +5,14 @@
 
 
 body {
-    background-color: #31363F;
+    background-color: #d2d3db; /* Kolor tła w trybie jasnym */
 }
+
+/* Ustawienia dla trybu ciemnego */
+[data-mode="dark"] body {
+    background-color: #31363F; /* Kolor tła w trybie ciemnym */
+}
+
 
 @media (max-width: 768px) {
     .App {
@@ -23,13 +29,11 @@ body {
       width: 100%;
       max-width: none; 
     }
-  
     .App header,
     .App footer {
       margin-left: auto; 
       margin-right: auto; 
     }
-  
     .App footer {
       margin-top: 20px; 
     }
