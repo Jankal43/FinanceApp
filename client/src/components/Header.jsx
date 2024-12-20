@@ -38,12 +38,12 @@ function Header() {
 
 
     return (
-        <header className="flex justify-around bg-slate-100 dark:bg-gray-900 pt-3 pb-3 items-center border-b border-gray-600">
+        <header className="flex justify-around bg-slate-100 dark:bg-gray-900 pt-3 pb-3 items-center">
             <button
                 ref={themeToggleBtn}
                 id="theme-toggle"
                 type="button"
-                className="text-black dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                className="text-black dark:text-gray-400 text-sm p-2.5"
             >
                 <svg
                     ref={themeToggleDarkIcon}
@@ -71,7 +71,13 @@ function Header() {
                 </svg>
             </button>
             <p className="text-black dark:text-gray-400 text-xl">Expenses</p>
-            <AiOutlineMenu className="text-black dark:text-gray-400" />
+            {/*<AiOutlineMenu className="text-black dark:text-gray-400"/>*/}
+            <svg className="text-black dark:text-gray-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"/>
+                <path d="M7 12h14l-3 -3m0 6l3 -3"/>
+            </svg>
         </header>
     );
 }

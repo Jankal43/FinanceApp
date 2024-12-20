@@ -30,14 +30,17 @@ function CreateArea(props) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/expenses', {
+
+      const payload = {
         emoji: spends.emoji,
         description: spends.description,
-        price: spends.moneySpend,
+        price: Number(spends.moneySpend), // Convert to number
         date: spends.todaysDate
-      });
+      };
 
-      if (response.status === 200) {
+      const response = await axios.post('http://localhost:8080/expenses', payload);
+
+      if (response.status === 201) {
         console.log('Expanse added:', response.data);
         setSpends((prevState) => ({
           ...prevState,
@@ -48,10 +51,12 @@ function CreateArea(props) {
         props.addSpend(spends);
         props.setShowCreateArea(false);
       } else {
+        console.error('1', response.data);
+
         console.error('Error adding expanse:', response.data);
       }
     } catch (error) {
-      
+      console.error('2');
       console.error('Error adding expanse:', error);
     }
   };

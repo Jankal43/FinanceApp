@@ -1,24 +1,22 @@
-// import { ObjectId } from 'mongodb';
-const { ObjectId } = require('mongodb');
+import Expenses from "../routes/expenses";
+
+const Expense = require('../models/expense');
 
 export async function deleteExpenseController(req, res) {
+
+    const {id} = req.params;
+    console.log(id)
     try {
-        const { db } = req.app;
-        const expenseId = req.params.id;
-
-        // Sprawdź, czy ID jest prawidłowe i konwertuj na ObjectId
-        if (!ObjectId.isValid(expenseId)) {
-            return res.status(400).json({ message: 'Invalid ID' });
+        if (!id) {
+            return res.status(400).json({message: 'Expense ID is required'});
         }
-
-        const result = await db.collection('expenses').deleteOne({ _id: new ObjectId(expenseId) });
-
-        if (result.deletedCount === 1) {
-            res.status(200).json({ message: 'Expense deleted' });
-        } else {
-            res.status(404).json({ message: 'Expense not found' });
+        const deletedExpense = await Expense.findByIdAndDelete(id);
+        if (!deletedExpense) {
+            return res.status(404).json({message: 'Expense not found'});
         }
+        res.status(200).json({message: 'Expense deleted successfully', deletedExpense});
     } catch (error) {
-        res.status(500).json({ error: error.toString() });
+        console.error('Error deleting expense:', error);
+        res.status(500).json({message: 'Failed to delete expense', error: error.message});
     }
 }

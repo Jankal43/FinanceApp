@@ -23,7 +23,7 @@ function App() {
         console.error('Error fetching expenses:', error);
       }
     };
-  
+
     fetchExpenses();
   }, []);
   

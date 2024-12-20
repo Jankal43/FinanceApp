@@ -1,7 +1,7 @@
 import express from 'express';
-import { createExpensesController } from '../controllers/createExpense';
-import { getExpensesController } from '../controllers/getExpenses';
-import { deleteExpenseController } from '../controllers/deleteExpanse';
+import {createExpensesController} from '../controllers/createExpense';
+import {getExpensesController} from '../controllers/getExpenses';
+import {deleteExpenseController} from '../controllers/deleteExpanse';
 
 const expensesRouter = express.Router();
 
@@ -12,3 +12,4 @@ expensesRouter.get('/', getExpensesController);
 expensesRouter.delete('/:id', deleteExpenseController);
 
 export default expensesRouter;
+

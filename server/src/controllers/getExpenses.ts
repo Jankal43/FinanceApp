@@ -1,9 +1,10 @@
+// import Expanse from "../models/expense"
+const Expense = require('../models/expense')
+
 export async function getExpensesController(req: any, res: any) {
     try {
-        const { db } = req.app;
-
-        const result = await db.collection('expenses').find().toArray();
-    
+        const result = await Expense.find()
+        console.log(result)
 
         res.status(200).json({
             message: "expenses retrieved",
@@ -11,6 +12,6 @@ export async function getExpensesController(req: any, res: any) {
         });
 
     } catch (error) {
-        res.status(500).json({ error: error.toString() });
+        res.status(500).json({error: error.toString()});
     }
 }

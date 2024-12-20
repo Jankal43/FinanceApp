@@ -28,7 +28,7 @@ function CreateTag(props) {
                 description: newTag.description,
             });
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log('Tag added:', response.data);
                 props.addTag(newTag)
                 setNewTag((prevState) => ({

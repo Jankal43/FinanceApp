@@ -1,8 +1,8 @@
+const Tag = require('../models/tag')
 export async function getTagsController(req: any, res: any) {
     try {
-        const {db} = req.app;
-
-        const result = await db.collection('tags').find().toArray();
+        const result = await Tag.find()
+        console.log(result)
 
         res.status(200).json({
             message: "Tags retrieved",

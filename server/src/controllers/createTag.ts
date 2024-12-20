@@ -1,30 +1,24 @@
+const Tag = require('../models/tag')
+
 export async function createTagController(req: any, res: any) {
     try {
-        console.log(req.body);
-
-        const {db} = req.app;
         const {emoji, description} = req.body;
 
-       //tu mozna warunki dodac na obecnosc emoji i decription oraz na dlugosc
-
-        if (!emoji) {
+        if (!emoji || emoji.length === 0) {
             return res.status(400).json({message: 'Emoji is required'});
         }
-
-        if (!description) {
+        if (!description || description.length === 0) {
             return res.status(400).json({message: 'Description is required'});
         }
 
-        const result = await db.collection('tags').insertOne({
-            emoji,
-            description
-        });
+        const tag = new Tag({
+            emoji: req.body.emoji,
+            description: req.body.description,
+        })
 
-        if (result.acknowledged) {
-            res.status(200).json({message: 'Tag created'});
-        } else {
-            throw new Error('Tag not created');
-        }
+        const newTag = await tag.save();
+        res.status(201).json(newTag);
+
     } catch (error) {
         res.status(500).json({error: error.toString()});
     }

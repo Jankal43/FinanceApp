@@ -1,6 +1,6 @@
 import express from 'express';
-import { createTagController } from '../controllers/createTag';
-import { getTagsController } from '../controllers/getTags';
+import {createTagController} from '../controllers/createTag';
+import {getTagsController} from '../controllers/getTags';
 
 const tagsRouter = express.Router();
 
